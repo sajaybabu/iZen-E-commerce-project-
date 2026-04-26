@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to iZen</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #fff;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .main-container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .welcome-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        padding: 20px 0;
+      }
+
+      .welcome-title .welcome-text {
+        font-family: "Inter", sans-serif;
+        font-size: 1.4rem;
+        color: #333;
+        margin-top: 14px;
+      }
+
+      .welcome-title .brand-name {
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 1.6rem;
+        color: #333;
+        margin-top: 14px;
+      }
+
+      .logo-icon {
+        width: 70px;
+        height: auto;
+        display: block;
+      }
+
+      .content-wrapper {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .illustration-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+      }
+
+      .illustration-img {
+        max-width: 100%;
+        height: auto;
+        max-height: 500px;
+        padding-left: 10px;
+      }
+
+      .form-section {
+        padding: 30px;
+        max-width: 360px;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        padding-bottom: 10px;
+      }
+
+      .form-section h5 {
+        color: #333;
+        font-size: 0.85rem;
+        margin-bottom: 28px;
+        font-weight: 400;
+        padding-bottom: 10px;
+        text-decoration: underline;
+      }
+
+      .form-control {
+        border: none;
+        border-bottom: 1px solid #ccc;
+        border-radius: 0;
+        padding: 8px 0;
+        font-size: 0.85rem;
+        background: transparent;
+      }
+
+      .form-control:focus {
+        box-shadow: none;
+        border-bottom-color: #333;
+        background: transparent;
+      }
+
+      .form-control::placeholder {
+        color: #666;
+      }
+
+      .btn-create-account {
+        background-color: #333;
+        color: #fff;
+        border-radius: 25px;
+        padding: 10px 30px;
+        font-size: 0.9rem;
+        width: 100%;
+        margin-top: 18px;
+        border: none;
+      }
+
+      .btn-create-account:hover {
+        background-color: #222;
+        color: #fff;
+      }
+
+      .btn-google {
+        background-color: #fff;
+        color: #333;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        padding: 8px 30px;
+        font-size: 0.85rem;
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .btn-google:hover {
+        background-color: #f8f8f8;
+        border-color: #ccc;
+      }
+
+      .btn-google img {
+        width: 16px;
+        height: 16px;
+      }
+
+      .login-link {
+        text-align: center;
+        margin-top: 14px;
+        color: #666;
+        font-size: 0.8rem;
+      }
+
+      .login-link a {
+        color: #333;
+        text-decoration: underline;
+        font-weight: 500;
+      }
+
+      .login-link a:hover {
+        color: #000;
+      }
+
+      .mb-custom {
+        margin-bottom: 0.7rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- Welcome Header -->
+      <div class="welcome-title">
+        <span class="welcome-text">welcome to</span>
+        <span class="brand-name">iZen</span>
+        <img src="/images/blackkkkk.png" alt="iZen Logo" class="logo-icon" />
+      </div>
+
+      <!-- Main Content -->
+      <div class="content-wrapper">
+        <div class="container-fluid">
+          <div class="row justify-content-center align-items-center">
+            <!-- Illustration Column -->
+            <div
+              class="col-lg-4 col-md-5 illustration-container d-none d-md-flex"
+            >
+              <!-- Uncomment and update path when you have the illustration -->
+              <!-- Find this commented line in the Illustration Column section -->
+              <!-- <img src="/path/to/your/illustration.png" alt="Sign up illustration" class="illustration-img"> -->
+
+              <!-- Replace it with your actual image path like this: -->
+              <img
+                src="/images/signup.png"
+                alt="Sign up illustration"
+                class="illustration-img"
+              />
+            </div>
+
+            <!-- Form Column -->
+            <div class="col-lg-3 col-md-5 col-sm-8 col-10">
+              <div class="form-section">
+                <h5>Enter your details below</h5>
+
+                <form action="/register" method="POST" id="registerForm">
+    <div class="mb-custom">
+        <input type="text" class="form-control" name="username" id="username" placeholder="User name">
+        <small id="usernameError" class="text-danger" style="font-size: 0.7rem;"></small>
+    </div>
+    
+    <div class="mb-custom">
+        <input type="email" class="form-control" name="email" id="email" placeholder="email">
+        <small id="emailError" class="text-danger" style="font-size: 0.7rem;"></small>
+    </div>
+    
+    <div class="mb-custom">
+        <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone">
+        <small id="phoneError" class="text-danger" style="font-size: 0.7rem;"></small>
+    </div>
+    
+    <div class="mb-custom">
+        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+        <small id="passwordError" class="text-danger" style="font-size: 0.7rem;"></small>
+    </div>
+
+    <button type="submit" class="btn btn-create-account">Create Account</button>
+</form>
+
+                <button class="btn btn-google">
+                  <img src="https://www.google.com/favicon.ico" alt="Google" />
+                  Sign up with Google
+                </button>
+
+                <p class="login-link">
+                  Already have account? <a href="/login">Log in</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

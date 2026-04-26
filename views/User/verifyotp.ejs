@@ -1,0 +1,22 @@
+<button id="resendBtn" onclick="resendOtp()" disabled>Resend OTP</button>
+<p id="timer">60</p>
+
+<script>
+let time = 60;
+const timerElement = document.getElementById("timer");
+const resendBtn = document.getElementById("resendBtn");
+
+const countdown = setInterval(() => {
+    time--;
+    timerElement.innerText = time;
+
+    if (time <= 0) {
+        clearInterval(countdown);
+        resendBtn.disabled = false;
+    }
+}, 1000);
+
+function resendOtp() {
+    window.location.href = "/user/resend-otp";
+}
+</script> 
